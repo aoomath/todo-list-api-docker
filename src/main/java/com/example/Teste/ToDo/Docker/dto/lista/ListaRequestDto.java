@@ -1,5 +1,6 @@
-package com.example.Teste.ToDo.Docker.dto;
+package com.example.Teste.ToDo.Docker.dto.lista;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,8 +11,11 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder = true)
 @AllArgsConstructor
 @NoArgsConstructor
+@Schema(description = "Objeto de requisição para criação ou atualização de uma lista")
 public class ListaRequestDto {
 
-    @NotBlank(message = "O nome da lista é obrigatório")
-    private String nome;
+    @Schema(description = "Título da lista. Esse Campo é obrigatório.",
+            example = "Materiais Escolares")
+    @NotBlank(message = "O título da lista é obrigatório")
+    private String titulo;
 }

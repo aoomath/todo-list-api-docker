@@ -1,4 +1,4 @@
-package com.example.ToDoList.exception;
+package com.example.Teste.ToDo.Docker.exception;
 
 public class RecursoNaoEncontradoException extends RuntimeException{
     public RecursoNaoEncontradoException(String mensagem) {

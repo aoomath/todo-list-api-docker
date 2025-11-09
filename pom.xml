@@ -11,8 +11,8 @@
 	<groupId>com.example</groupId>
 	<artifactId>Teste-ToDo-Docker</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Teste-ToDo-Docker</name>
-	<description>Projeto de exemplo para testes</description>
+	<name>todo-list-api-docker</name>
+	<description>Projeto To-Do List</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -80,6 +80,21 @@
 			<groupId>org.testcontainers</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.8.14</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-compress</artifactId>
+			<version>1.26.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.18.0</version>
 		</dependency>
 	</dependencies>
 

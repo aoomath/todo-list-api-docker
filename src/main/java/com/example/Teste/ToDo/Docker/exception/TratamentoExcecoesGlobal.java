@@ -1,4 +1,4 @@
-package com.example.ToDoList.exception;
+package com.example.Teste.ToDo.Docker.exception;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
