@@ -39,11 +39,13 @@ public class TratamentoExcecoesGlobal {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<ErroRespostaDTO> tratarValidacao(MethodArgumentNotValidException ex, HttpServletRequest request) {
-        List<String> erros = ex.getBindingResult().getFieldErrors()
+        List<String> erros = ex.getBindingResult()
+                .getFieldErrors()
                 .stream()
-                .map(e -> "mensagem de erro: " + e.getDefaultMessage())
+                .map(erro -> String.format("Campo '%s': %s", erro.getField(), erro.getDefaultMessage()))
                 .collect(Collectors.toList());
 
+        // Cria o DTO de resposta com base no seu construtor
         ErroRespostaDTO dto = new ErroRespostaDTO(
                 HttpStatus.BAD_REQUEST.value(),
                 "Erro de validação",
@@ -51,6 +53,7 @@ public class TratamentoExcecoesGlobal {
                 request.getRequestURI(),
                 erros
         );
+
 
         return ResponseEntity.badRequest().body(dto);
     }
