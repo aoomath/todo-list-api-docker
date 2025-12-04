@@ -1,86 +1,116 @@
-# ToDo List API
+# 📝 ToDo List API — Spring Boot + Testcontainers
 
-API REST desenvolvida em **Spring Boot 3.5.7** e **Java 21** para gerenciamento de listas e tarefas.  
-Inclui validação, tratamento global de exceções, Swagger, Actuator, testes (unitários e integração com Testcontainers + Rest Assured) e pipeline para gerar imagem Docker via GitHub Actions.
-
----
-
-## 🏗 Principais Características
-- CRUD de **Listas** e **Tarefas**
-- Validação com **Bean Validation (Jakarta Validation)**
-- Tratamento centralizado de exceções (**GlobalExceptionHandler**)
-- Documentação automática com **Swagger / OpenAPI**
-- Health & Info via **Spring Actuator**
-- **Testes**
-  - Unitários: JUnit 5 + Mockito
-  - Integração: Testcontainers + PostgreSQL 17 + Rest Assured
-- Docker + Docker Compose
-- Pipeline **GitHub Actions** para build, testes e push de imagem no Docker Hub
+Uma API REST para gerenciamento de listas e tarefas, construída com **Spring Boot 3.5.7** e **Java 21**, incluindo validação, tratamento global de exceções, documentação automática com Swagger, Actuator, testes avançados e pipeline completo com Docker e GitHub Actions.
 
 ---
 
-## ▶ Como Executar Localmente
+# ⚡ Visão Geral
 
+Esta API fornece endpoints para gerenciar:
+
+- 🗂️ Listas  
+- ✅ Tarefas  
+
+E conta com um conjunto robusto de infraestrutura:
+
+- 🛠 Validação com Bean Validation
+- 🚫 Tratamento global de erros
+- 📚 Documentação com Swagger / OpenAPI
+- 📊 Actuator para métricas e health check
+- 🧪 Testes (unitários + integração com Testcontainers)
+- 🐳 Docker / Docker Compose
+- 🔁 Pipeline GitHub Actions com build + testes + push Docker
+
+---
+
+# 🏗️ Tecnologias Principais
+
+| Categoria   | Tecnologias                           |
+|-------------|----------------------------------------|
+| Linguagem   | Java 21                                |
+| Framework   | Spring Boot 3.5.7                      |
+| Banco       | PostgreSQL 17 (Testcontainers)         |
+| Testes      | JUnit 5, Mockito, Rest Assured         |
+| DevOps      | Docker, Docker Compose, GitHub Actions |
+| Docs        | Swagger / OpenAPI                      |
+
+---
+
+# ▶️ Como Rodar o Projeto
+
+## 1️⃣ Clonar o repositório
 ```bash
-# Clone o repositório
 git clone https://github.com/aoomath/todo-list-api-docker.git
 cd todo-list-api-docker
+```
 
-# Suba o banco com Docker Compose
+## 2️⃣ Subir o PostgreSQL
+```bash
 docker-compose up -d
+```
 
-# Execute a aplicação
+## 3️⃣ Iniciar a aplicação
+```bash
 ./mvnw spring-boot:run
 ```
 
 ---
 
-## 📘 Swagger & Actuator
-- **Swagger UI**: http://localhost:8080/swagger-ui.html  
-- **Actuator endpoints**:
-  - `/actuator/health`
-  - `/actuator/info`
-  - `/actuator/env`
-  - `/actuator/metrics`
-  - `/actuator/loggers`
+# 📘 Documentação e Monitoramento
+
+### 🔍 Swagger  
+http://localhost:8080/swagger-ui.html
+
+### 📡 Actuator
+- /actuator/health  
+- /actuator/info  
+- /actuator/metrics  
+- /actuator/env  
+- /actuator/loggers  
 
 ---
 
-## 🐳 Docker
+# 🐳 Docker
 
-### Build da imagem
+## Criar imagem
 ```bash
 docker build -t aoomath/todo-list-api-docker .
 ```
 
-### Rodar com Docker Compose
+## Subir com Docker Compose
 ```bash
 docker-compose up -d
 ```
-### Docker Hub
+
+## Docker Hub
 Imagem disponível em:  
 [matheusferr/todolist](https://hub.docker.com/r/matheusferr/todolist)
 
 ---
 
-## ⚙ GitHub Actions
-O pipeline automatizado executa:
-- Build do projeto  
+# 🔁 CI/CD — GitHub Actions
+
+O pipeline realiza automaticamente:
+
+- Build  
 - Testes (unitários + integração)  
-- Build da imagem Docker  
+- Build Docker  
 - Push automático para Docker Hub  
 
-**Secrets necessários no GitHub:**
-- `DOCKERHUB_USERNAME`
-- `DOCKERHUB_TOKEN`
+### Secrets necessários
+
+- DOCKERHUB_USERNAME  
+- DOCKERHUB_TOKEN  
 
 ---
 
-## 📄 Licença
-Licença **MIT** — sinta-se à vontade para usar, modificar e contribuir.
+# 📄 Licença
+
+Distribuído sob MIT License.
 
 ---
 
-## 👤 Autor
-**Matheus A. Ferreira**  
+# ✨ Autor
+
+Matheus A. Ferreira  
 GitHub: https://github.com/aoomath
